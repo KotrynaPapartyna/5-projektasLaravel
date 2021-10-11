@@ -4,6 +4,13 @@
 
 <h1>Schools</h1>
 
+<form method="GET" action="{{route('school.create') }}">
+
+    @csrf
+    <button class="btn btn-success" type="submit">Create</button>
+</form>
+
+
 <table>
     <tr>
         <th>ID</th>
@@ -30,7 +37,7 @@
                 <form method="POST" action="{{route('school.destroy', [$school]) }}">
 
                     @csrf
-                    <button type="submit">Delete</button>
+                    <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
 
             </td>

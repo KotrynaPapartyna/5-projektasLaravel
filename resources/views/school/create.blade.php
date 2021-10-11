@@ -14,7 +14,7 @@
 
     @csrf
 
-    <button type="submit">Add new School</button>
+    <button class="btn btn-info" type="submit">Add new School</button>
     </form>
 
     @endsection

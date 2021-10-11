@@ -2,17 +2,54 @@
 
 @section('content')
 
-<h2>Create New AttendanceGroup<h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Create Student') }}</div>
 
-<form method="POST" action="{{route('attendancegroup.store')}}">
-    <p>Name: <input type="text" name="attendancegroup_name"></p>
-    <p>Description: <input type="text" name="attendancegroup_description"></p>
-    <p>Difficulty: <input type="text" name="attendancegroup_difficulty"></p>
-    <p>School ID: <input type="text" name="attendancegroup_school_id"></p>
+                <div class="card-body">
 
-    @csrf
+                    <form method="POST" action="{{route('attendancegroup.store')}}">
 
-    <button type="submit">Add new AttendanceGroup</button>
-    </form>
+                        <div class="form-group row">
+                            <label for="attendancegroup_name" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Name') }}</label>
+                            <div class="col-md-6">
+                            <input id="attendancegroup_name"type="text" class="form-control" name="attendancegroup_name">
+                            </div>
+                        </div>
 
-    @endsection
+                        <div class="form-group row">
+                            <label for="attendancegroup_description" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Description') }}</label>
+                            <div class="col-md-6">
+                            <input id="attendancegroup_description"type="text" class="form-control" name="attendancegroup_description">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="attendancegroup_difficulty" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Difficulty') }}</label>
+                            <div class="col-md-6">
+                            <input id="attendancegroup_difficulty"type="text" class="form-control" name="attendancegroup_difficulty">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="attendancegroup_school_id" class="col-sm-3 col-form-label" >{{ __('Attendancegroup School ID') }}</label>
+                            <div class="col-md-6">
+                            <input id="attendancegroup_school_id"type="text" class="form-control" name="attendancegroup_school_id">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-info" type="submit">Add new AttendanceGroup</button>
+
+                        @csrf
+
+
+                </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

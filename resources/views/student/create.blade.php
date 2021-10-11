@@ -1,20 +1,56 @@
+
 @extends('layouts.app')
 
 @section('content')
 
-<h2>Create New Students<h2>
 
 
-<form method="POST" action="{{route('student.store')}}">
-    <p>Name: <input type="text" name="student_name"></p>
-    <p>Surname: <input type="text" name="student_surname"></p>
-    <p>Gropup ID: <input type="text" name="student_group_id"></p>
-    <p>Image URL: <input type="text" name="student_image_url"></p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Create Student') }}</div>
 
-    @csrf
+                    <div class="card-body">
 
-    <button type="submit">Add new Student</button>
+                        <form method="POST" action="{{route('student.store')}}">
+
+
+                            <div class="form-group row">
+                                <label for="student_name" class="col-sm-3 col-form-label">{{ __('Name') }}</label>
+                                <div class="col-md-6">
+                                <input id="student_name"type="text" class="form-control" name="student_name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="student_surname" class="col-sm-3 col-form-label" >{{ __('Surname') }}</label>
+                                <div class="col-md-6">
+                                <input id="student_surname"type="text" class="form-control" name="student_surname">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="student_group_id" class="col-sm-3 col-form-label" >{{ __('Group ID') }}</label>
+                                <div class="col-md-6">
+                                <input id="student_group_id" type="text" class="form-control" name="student_group_id">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="student_image_url" class="col-sm-3 col-form-label" >{{ __('Image URL') }}</label>
+                                <div class="col-md-6">
+                                <input id="student_image_url"type="text" class="form-control" name="student_image_url">
+                            </div>
+                        </div>
+                        @csrf
+
+                <button class="btn btn-info" type="submit">Add new Student</button>
     </form>
 
-
-    @endsection
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

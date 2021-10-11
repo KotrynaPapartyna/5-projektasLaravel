@@ -4,6 +4,13 @@
 
 <h1>Attendancegroup</h1>
 
+<form method="GET" action="{{route('attendancegroup.create') }}">
+
+    @csrf
+    <button class="btn btn-success" type="submit">Create</button>
+</form>
+
+
 <table>
     <tr>
         <th>ID</th>
@@ -16,8 +23,6 @@
     @foreach ($attendancegroups as $attendancegroup)
         <tr>
             <td>{{ $attendancegroup->id }}</td>
-
-
             <td><a href="{{route('attendancegroup.show', [$attendancegroup]) }}"> {{$attendancegroup->name }}</a></td>
             <td>{{ $attendancegroup->description}}</td>
             <td>{{ $attendancegroup->difficulty}}</td>
@@ -28,7 +33,7 @@
                 <form method="POST" action="{{route('attendancegroup.destroy', [$attendancegroup]) }}">
 
                     @csrf
-                    <button type="submit">Delete</button>
+                    <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
 
             </td>
