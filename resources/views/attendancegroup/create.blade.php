@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Create Student') }}</div>
+                <div class="card-header">{{ __('Create AttendanceGroup') }}</div>
 
                 <div class="card-body">
 
@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-info" type="submit">Add new AttendanceGroup</button>
+                        <button class="btn btn-info" type="submit">Save new AttendanceGroup</button>
 
                         @csrf
 

@@ -5,13 +5,15 @@
 
 <h1>Information about student</h1>
 
+<div class="container">
 
+ID<p>{{$student->id}}</p>
+Name<p>{{$student->name}}</p>
+Surname<p>{{$student->surname}}</p>
+Group ID<p>{{$student->group_id}}</p>
+Image URL<p>{{$student->image_url}}</p>
 
-<p>{{$student->id}}</p>
-<p>{{$student->name}}</p>
-<p>{{$student->surname}}</p>
-<p>{{$student->group_id}}</p>
-<p>{{$student->image_url}}</p>
-
+<a class="btn btn-info" href="{{route('student.index') }}">Back To Students List</a>
+</div>
 
 @endsection

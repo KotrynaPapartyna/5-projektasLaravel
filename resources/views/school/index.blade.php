@@ -11,7 +11,8 @@
 </form>
 
 
-<table>
+<div class="container">
+    <table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -32,7 +33,9 @@
             <td>{{ $school->phone }}</td>
 
             <td>
-                <a href="{{route('school.edit', [$school]) }}">Edit</a>
+
+                <a class="btn btn-warning" href="{{route('school.show', [$school]) }}">Show</a>
+                <a class="btn btn-info" href="{{route('school.edit', [$school]) }}">Edit</a>
 
                 <form method="POST" action="{{route('school.destroy', [$school]) }}">
 
@@ -45,5 +48,5 @@
     @endforeach
 
 </table>
-
+</div>
 @endsection

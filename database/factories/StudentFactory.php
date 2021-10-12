@@ -24,9 +24,10 @@ class StudentFactory extends Factory
     {
         return [
             'name'=>$this->faker->firstName(),
-            'surname'=>$this->faker->sentence(2),
-            'group_id'=>rand(1,10),
-            'image_url'=>$this->faker->url(20),
+            'surname'=>$this->faker->lastName(),
+            //'group_id'=>rand(1,10),
+            'group_id'=>$this->faker->randomDigit(),
+            'image_url'=>$this->faker->imageUrl(300,300, "animals", true),// (nurodo pvz dydi)
         ];
     }
 }

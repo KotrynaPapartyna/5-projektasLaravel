@@ -2,19 +2,55 @@
 
 @section('content')
 
-<h2>Create New  School<h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Create School') }}</div>
 
-<form method="POST" action="{{route('school.store')}}">
-    <p>Name: <input type="text" name="school_name"></p>
-    <p>Description: <input type="text" name="school_description"></p>
-    <p>Place: <input type="text" name="school_place"></p>
-    <p>Phone: <input type="text" name="school_phone"></p>
+                <div class="card-body">
+
+                    <form method="POST" action="{{route('school.store')}}">
+
+                        <div class="form-group row">
+                            <label for="school_name" class="col-sm-3 col-form-label" >{{ __('School Name') }}</label>
+                            <div class="col-md-6">
+                            <input id="school_name"type="text" class="form-control" name="school_name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="school_description" class="col-sm-3 col-form-label" >{{ __('School Description') }}</label>
+                            <div class="col-md-6">
+                            <input id="school_description"type="text" class="form-control" name="school_description">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="school_place" class="col-sm-3 col-form-label" >{{ __('Scool Place') }}</label>
+                            <div class="col-md-6">
+                            <input id="school_place"type="text" class="form-control" name="school_place">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="school_phone" class="col-sm-3 col-form-label" >{{ __('School Phone') }}</label>
+                            <div class="col-md-6">
+                            <input id="school_phone"type="text" class="form-control" name="school_phone">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-info" type="submit">Save new School</button>
+
+                        @csrf
 
 
+                </form>
 
-    @csrf
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
 
-    <button class="btn btn-info" type="submit">Add new School</button>
-    </form>
-
-    @endsection

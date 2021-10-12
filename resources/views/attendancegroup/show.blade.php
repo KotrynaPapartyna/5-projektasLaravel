@@ -11,6 +11,6 @@
 <p>{{$attendancegroup->difficulty}}</p>
 <p>{{$attendancegroup->school_id}}</p>
 
-
+<a class="btn btn-info" href="{{route('attendancegroup.index') }}">Back To AttendanceGroups List</a>
 
 @endsection

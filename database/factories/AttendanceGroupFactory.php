@@ -22,10 +22,12 @@ class AttendanceGroupFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->name(),
-            'description'=>$this->faker->sentence(10),
+            'name'=>$this->faker->company(),
+            'description'=>$this->faker->paragraph(5),
+            //'description'=>$this->faker->sentence(5),
+            //'description'=>$this->faker->word(5),
             'school_id'=>rand(1,10),
-            'difficulty'=>$this->faker->sentence(10),
+            'difficulty'=>$this->faker->word(5),
         ];
     }
 }

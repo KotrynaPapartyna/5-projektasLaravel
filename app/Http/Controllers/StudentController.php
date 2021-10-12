@@ -41,7 +41,21 @@ class StudentController extends Controller
         $student->name=$request->student_name;
         $student->surname=$request->student_surname;
         $student->group_id=$request->student_group_id;
-        $student->image_url=$request->student_image_url;
+        //$student->image_url=$request->student_image_url;
+
+        // patikrina ar laukelis netuscias. tuscias- false, ne- true
+        if ($request->has('student_image_url')) {
+
+
+        // tokia eilute issaugo originalu paveiksliuko formata
+        $imageName=time().'.'.$request->student_image_url->extension();
+        $student->image_url= '/images/'.$imageName;
+
+
+        $request->student_image_url->move(public_path('images'), $imageName);
+        } else {
+            $student->image_url= '/images/placeholder.png';
+        }
 
         $student->save();
 
@@ -79,15 +93,24 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        $student->name=$request->student_name;
-        $student->surname=$request->student_surname;
-        $student->group_id=$request->student_group_id;
-        $student->image_url=$request->student_image_url;
+        $student->name = $request->student_name;
+        $student->surname = $request->student_surname;
+        $student->group_id = $request->student_group_id;
+
+        //jeigu paveikslio inputus uzpildytas -> tada ikelia nauja paveiksliuka ir priskiria nauja reiksme duomenu bazeje
+        // jeigu paveiksliu inputas neuzpildytas -> tada priskiria placholder.png !!!!
+
+        if($request->has('student_image_url'))
+        {
+            $imageName = time().'.'.$request->student_image_url->extension();
+            $student->image_url = '/images/'.$imageName;
+            $request->student_image_url->move(public_path('images'), $imageName);
+        }
 
         $student->save();
-
         return redirect()->route("student.index");
     }
+
 
     /**
      * Remove the specified resource from storage.

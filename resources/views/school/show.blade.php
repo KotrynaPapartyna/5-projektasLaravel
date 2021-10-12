@@ -12,6 +12,7 @@
 <p>{{$school->place}}</p>
 <p>{{$school->phone}}</p>
 
+<a class="btn btn-info" href="{{route('school.index') }}">Back To Schools List</a>
 
 @endsection
 

@@ -11,7 +11,8 @@
 </form>
 
 
-<table>
+<div class="container">
+    <table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -29,7 +30,9 @@
             <td>{{ $attendancegroup->school_id}}</td>
 
             <td>
-                <a href="{{route('attendancegroup.edit', [$attendancegroup]) }}">Edit</a>
+                <a class="btn btn-warning" href="{{route('attendancegroup.show', [$attendancegroup]) }}">Show</a>
+                <a class="btn btn-info" href="{{route('attendancegroup.edit', [$attendancegroup]) }}">Edit</a>
+
                 <form method="POST" action="{{route('attendancegroup.destroy', [$attendancegroup]) }}">
 
                     @csrf
@@ -41,5 +44,5 @@
     @endforeach
 
 </table>
-
+</div>
 @endsection
