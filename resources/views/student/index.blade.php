@@ -17,6 +17,7 @@
         <th>Name</th>
         <th>Surname</th>
         <th>Group ID</th>
+        <th>Action</th>
 
     </tr>
 

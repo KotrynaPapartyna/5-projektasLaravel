@@ -24,7 +24,7 @@
                             <label for="student_surname" class="col-md-4 col-form-label text-md-right">{{ __('Student surname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control" name="student_surname" required>
+                                <input id="surname" type="text" class="form-control" name="student_surname" required autofocus>
                             </div>
                         </div>
 
@@ -32,7 +32,7 @@
                             <label for="student_group_id" class="col-md-4 col-form-label text-md-right">{{ __('Group ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="group_id" type="text" class="form-control" name="student_group_id" required>
+                                <input id="group_id" type="text" class="form-control" name="student_group_id" required autofocus>
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
                             <label for="student_image_url" class="col-md-4 col-form-label text-md-right">{{ __('Student image') }}</label>
 
                             <div class="col-md-6">
-                                <input id="image_url" type="file" class="form-control" name="student_image_url" >
+                                <input id="image_url" type="file" class="form-control" name="student_image_url" required autofocus>
                             </div>
                         </div>
 

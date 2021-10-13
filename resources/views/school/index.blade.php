@@ -19,6 +19,7 @@
         <th>Description</th>
         <th>Place</th>
         <th>Phone</th>
+        <th>Action</th>
 
     </tr>
 

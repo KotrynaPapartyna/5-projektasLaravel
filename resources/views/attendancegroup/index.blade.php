@@ -19,6 +19,8 @@
         <th>Dscription</th>
         <th>Difficulty</th>
         <th>School ID</th>
+        <th>Action</th>
+
     </tr>
 
     @foreach ($attendancegroups as $attendancegroup)

@@ -15,28 +15,29 @@
                         <div class="form-group row">
                             <label for="attendancegroup_name" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Name') }}</label>
                             <div class="col-md-6">
-                            <input id="attendancegroup_name"type="text" class="form-control" name="attendancegroup_name">
+                            <input id="attendancegroup_name"type="text" class="form-control" name="attendancegroup_name" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="attendancegroup_description" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Description') }}</label>
                             <div class="col-md-6">
-                            <input id="attendancegroup_description"type="text" class="form-control" name="attendancegroup_description">
+                            {{--<input id="attendancegroup_description"type="text" class="form-control" name="attendancegroup_description" required autofocus>--}}
+                            <textarea id="summernote" name="attendancegroup_description"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="attendancegroup_difficulty" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Difficulty') }}</label>
                             <div class="col-md-6">
-                            <input id="attendancegroup_difficulty"type="text" class="form-control" name="attendancegroup_difficulty">
+                            <input id="attendancegroup_difficulty"type="text" class="form-control" name="attendancegroup_difficulty" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="attendancegroup_school_id" class="col-sm-3 col-form-label" >{{ __('Attendancegroup School ID') }}</label>
                             <div class="col-md-6">
-                            <input id="attendancegroup_school_id"type="text" class="form-control" name="attendancegroup_school_id">
+                            <input id="attendancegroup_school_id"type="text" class="form-control" name="attendancegroup_school_id" required autofocus>
                             </div>
                         </div>
 
