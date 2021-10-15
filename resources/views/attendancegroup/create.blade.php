@@ -21,6 +21,7 @@
 
                         <div class="form-group row">
                             <label for="attendancegroup_description" class="col-sm-3 col-form-label" >{{ __('Attendancegroup Description') }}</label>
+
                             <div class="col-md-6">
                             {{--<input id="attendancegroup_description"type="text" class="form-control" name="attendancegroup_description" required autofocus>--}}
                             <textarea id="summernote" name="attendancegroup_description"></textarea>
@@ -38,6 +39,13 @@
                             <label for="attendancegroup_school_id" class="col-sm-3 col-form-label" >{{ __('Attendancegroup School ID') }}</label>
                             <div class="col-md-6">
                             <input id="attendancegroup_school_id"type="text" class="form-control" name="attendancegroup_school_id" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="attendancegroup_logo" class="col-md-4 col-form-label text-md-right">{{ __('Attendancegroup Logo') }}</label>
+                            <div class="col-md-6">
+                            <input id="logo" type="file" class="form-control" name="attendancegroup_logo" required autofocus>
                             </div>
                         </div>
 

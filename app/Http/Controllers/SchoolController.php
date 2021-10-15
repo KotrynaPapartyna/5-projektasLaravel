@@ -43,10 +43,20 @@ class SchoolController extends Controller
         $school->place=$request->school_place;
         $school->phone=$request->school_phone;
 
-        $school->save();
+        if ($request->has('school_logo')) {
 
-        return redirect()->route("school.index");
-    }
+            $imageName=time().'.'.$request->school_logo->extension();
+            $school->logo= '/images/'.$imageName;
+
+            $request->school_logo->move(public_path('images'), $imageName);
+            } else {
+                $school->school_logo= '/images/placeholder.png';
+            }
+
+            $school->save();
+
+            return redirect()->route("school.index");
+        }
 
     /**
      * Display the specified resource.
@@ -79,13 +89,20 @@ class SchoolController extends Controller
      */
     public function update(Request $request, School $school)
     {
+
         $school->name=$request->school_name;
         $school->description=$request->school_description;
         $school->place=$request->school_place;
         $school->phone=$request->school_phone;
 
-        $school->save();
+        if($request->has('school_logo'))
+        {
+            $logoName = time().'.'.$request->school_logo->extension();
+            $school->logo = '/images/'.$logoName;
+            $request->school_logo->move(public_path('images'), $logoName);
+        }
 
+        $school->save();
         return redirect()->route("school.index");
     }
 

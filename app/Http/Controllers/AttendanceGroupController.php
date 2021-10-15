@@ -43,6 +43,17 @@ class AttendanceGroupController extends Controller
         $attendancegroup->difficulty=$request->attendancegroup_difficulty;
         $attendancegroup->school_id=$request->attendancegroup_school_id;
 
+
+        if ($request->has('attendancegroup_logo')) {
+
+            $logoName=time().'.'.$request->attendancegroup_logo->extension();
+            $attendancegroup->logo= '/images/'.$logoName;
+
+            $request->attendancegroup_logo->move(public_path('images'), $logoName);
+            } else {
+                $attendancegroup->logo= '/images/placeholder.png';
+            }
+
         $attendancegroup->save();
 
         return redirect()->route("attendancegroup.index");
@@ -83,6 +94,14 @@ class AttendanceGroupController extends Controller
         $attendancegroup->description=$request->attendancegroup_description;
         $attendancegroup->difficulty=$request->attendancegroup_difficulty;
         $attendancegroup->school_id=$request->attendancegroup_school_id;
+
+        if($request->has('attendancegroup_logo'))
+        {
+            $logoName = time().'.'.$request->attendancegroup_logo->extension();
+            $attendancegroup->logo = '/images/'.$logoName;
+            $request->attendancegroup_logo->move(public_path('images'), $logoName);
+        }
+
 
         $attendancegroup->save();
 

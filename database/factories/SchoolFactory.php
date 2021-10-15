@@ -26,6 +26,7 @@ class SchoolFactory extends Factory
             'description'=>$this->faker->realText(),
             'place'=>$this->faker->country(),
             'phone'=>$this->faker->e164PhoneNumber(),
+            'logo'=>$this->faker->imageUrl(null, 360, 360, 'animals', true, true, 'cats', true),// (nurodo pvz dydi)
         ];
     }
 }

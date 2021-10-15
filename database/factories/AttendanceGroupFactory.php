@@ -28,6 +28,7 @@ class AttendanceGroupFactory extends Factory
             //'description'=>$this->faker->word(5),
             'school_id'=>rand(1,10),
             'difficulty'=>$this->faker->word(5),
+            'logo'=>$this->faker->imageUrl(null, 360, 360, 'animals', true, true, 'cats', true),// (nurodo pvz dydi)
         ];
     }
 }

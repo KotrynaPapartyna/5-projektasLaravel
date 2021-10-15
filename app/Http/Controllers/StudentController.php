@@ -44,6 +44,7 @@ class StudentController extends Controller
         //$student->image_url=$request->student_image_url;
 
         // patikrina ar laukelis netuscias. tuscias- false, ne- true
+
         if ($request->has('student_image_url')) {
 
 
