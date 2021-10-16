@@ -10,7 +10,7 @@
 
                 <div class="card-body">
 
-                    <form method="POST" action="{{route('school.store')}}">
+                    <form method="POST" action="{{route('school.store')}}" enctype="multipart/form-data">
 
                         <div class="form-group row">
                             <label for="school_name" class="col-sm-3 col-form-label" >{{ __('School Name') }}</label>
